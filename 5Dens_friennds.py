@@ -1,10 +1,12 @@
 s = "Fired:Corwill;Wilfred:Corwill;Barney:TornBull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
 
-def takeSecond(e):
+
+def take_second(e):
     return e[1]
 
-#тут список отримує зручніший для програми вигляд
-def doBetterList(meh):
+
+# тут список отримує зручніший для програми вигляд
+def do_better_list(meh):
     meh = meh.upper()
     lst = meh.split(";")
     betterlst = []
@@ -12,8 +14,10 @@ def doBetterList(meh):
         betterlst.append(lst[i].split(":"))
     return betterlst
 
-def sortByLastName(fixedlst):
-    #спочатку список сортується по іменам, потім по фаміліям, завдяки key=takeSecond
-    return sorted(sorted(fixedlst), key=takeSecond)
 
-print(sortByLastName(doBetterList(s)))
+def sort_by_last_name(fixedlst):
+    # спочатку список сортується по іменам, потім по фаміліям, завдяки key=takeSecond
+    return sorted(sorted(fixedlst), key=take_second)
+
+
+print(sort_by_last_name(do_better_list(s)))
